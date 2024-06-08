@@ -7,33 +7,45 @@ a = ["Stone", "Paper","Scissor"]
 player = 0
 comp = 0
 print("welcome player in this classic Stone Paper Scissor game : \n ")
-print("Enter your choice from Stone ,Paper, Scissor when you see -> \n Note : your spelling and case must match as given above. \n")
-for i in range(5):
-	m = rd.choice(a)
-	k = input("input ->  ")
-	print(k," x ",m)
-	if k == m:
-		print("Draw")
-	elif k =="Stone" and m == "Paper" :
-		print(" stone is warapped by the paper")
-		comp += 1
-	elif k =="Stone" and m == "Scissor" :
-		print(" stone has smahed the Scissor")
-		player += 1
-	elif k =="Scissor" and m == "Paper" :
-		print(" Scissor have cut the Paper in two halfs")
-		player += 1
-	elif k =="Paper" and m == "Stone" :
-		print(" Paper has warapped the Stone")
-		player += 1	
-	elif m =="Stone" and k == "Scissor" :
-		print(" Scissor is crushed by the Stone")
-		comp += 1
-	elif m =="Scissor" and k == "Paper" :
-		print(" Paper is been cut into two halfs")
-		comp += 1
+print("Enter your choice from Stone , Paper, Scissor when you see -> \n Note : your spelling and case must match as given above. \n")
+while 1 :
+	for i in range(5):
+		m = rd.choice(a)
+		k = input("input ->  ")
+		if k == m:
+			print("Draw")
+			print(k," x ",m)
+		elif k =="Stone" and m == "Paper" :
+				print(" stone is warapped by the paper")
+				print(k," x ",m)
+				comp += 1
+		elif k =="Stone" and m == "Scissor" :
+			print(" stone has smahed the Scissor")
+			print(k," x ",m)
+			player += 1
+		elif k =="Scissor" and m == "Paper" :
+			print(" Scissor have cut the Paper in two halfs")
+			print(k," x ",m)
+			player += 1
+		elif k =="Paper" and m == "Stone" :
+			print(" Paper has warapped the Stone")
+			print(k," x ",m)
+			player += 1	
+		elif m =="Stone" and k == "Scissor" :
+			print(" Scissor is crushed by the Stone")
+			print(k," x ",m)
+			comp += 1
+		elif m =="Scissor" and k == "Paper" :
+			print(" Paper is been cut into two halfs")
+			print(k," x ",m)
+			comp += 1
+		else:
+			  print("Wrong input ")
+	choice = input("Do you wanna have another round : Reply by Y as yes and N as no") 
+	if choice == "N" or "n":
+		   break
 	else:
-	    print("Wrong input ")
+	    pass
      
 		
 if comp < player :
